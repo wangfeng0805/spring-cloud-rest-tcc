@@ -17,9 +17,9 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 @ToString
 @EqualsAndHashCode
 @RefreshScope
-@ConfigurationProperties(prefix = ManualExceptionProperties.PREFIX)
+@ConfigurationProperties(prefix = "solar.exception")
 public class ManualExceptionProperties {
-    public static final String PREFIX = "solar.exception";
+//    public static final String PREFIX = "solar.exception";
 
     /**
      * 是否启用随机异常

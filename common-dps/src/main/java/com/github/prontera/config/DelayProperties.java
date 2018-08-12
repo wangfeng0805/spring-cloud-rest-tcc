@@ -17,9 +17,9 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 @ToString
 @EqualsAndHashCode
 @RefreshScope
-@ConfigurationProperties(prefix = DelayProperties.PREFIX)
+@ConfigurationProperties(prefix = "solar.delay")
 public class DelayProperties {
-    public static final String PREFIX = "solar.delay";
+//    public static final String PREFIX = "solar.delay";
 
     /**
      * 延迟返回毫秒时间

@@ -18,32 +18,27 @@ eureka:
     status-page-url-path: ${management.context-path}/info
     health-check-url-path: ${management.context-path}/health
     prefer-ip-address: false
+
 spring:
-  rabbitmq:
-    host: rabbitmq
-    username: chris
-    password: 123123
-    virtual-host: prontera
-    listener:
-      retry:
-        enabled: true
-    template:
-      retry:
-        enabled: true
   cloud:
     config:
       server:
-        git:
-          uri: 'https://git.oschina.net/witless/conf-repo.git'
+        native:
+          search-locations: /config-repo
+#        git:
+#          uri: 'https://git.oschina.net/witless/conf-repo.git'
           #uri: 'https://github.com/prontera/solar.git'
           #searchPaths: '{application}'
-          clone-on-start: true
+#          clone-on-start: true
           #username: 'chris'
           #password: '123123123'
-        encrypt:
-          enabled: false
+#        encrypt:
+#          enabled: false
   application:
     name: 'config-server'
-encrypt:
-  key: '*&3loa#@9no_0*(!'
+  profiles:
+    active: native
+
+#encrypt:
+#  key: '*&3loa#@9no_0*(!'
 

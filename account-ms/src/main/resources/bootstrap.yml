@@ -22,23 +22,10 @@ spring:
   application:
     name: 'account'
   datasource:
-    username: chris
-    password: 123123
+    username: root
+    password: wangfeng
     url: 'jdbc:mysql://solar_mysql:3306/account?useLegacyDatetimeCode=false&serverTimezone=Asia/Hong_Kong&useSSL=false'
-  rabbitmq:
-    host: rabbitmq
-    username: chris
-    password: 123123
-    virtual-host: prontera
-    listener:
-      retry:
-        enabled: true
-    template:
-      retry:
-        enabled: true
-      mandatory: true
-    publisher-returns: true
-    publisher-confirms: true
+
   cloud:
     loadbalancer:
       retry:
@@ -50,8 +37,6 @@ spring:
       fail-fast: true
   zipkin:
     base-url: 'http://zipkin_server:9411/'
-encrypt:
-  key: '*&3loa#@9no_0*(!'
 mybatis:
   type-handlers-package: 'com.github.prontera.domain.type.handler'
   mapper-locations: 'classpath*:mapper/**/*Mapper.xml'
