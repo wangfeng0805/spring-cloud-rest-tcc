@@ -3,6 +3,8 @@ server:
 management:
   port: 10248
   context-path: '/78d504ff-82e8-4a87-82e8-724d72d1171b'
+  security:
+    enabled: false
 eureka:
   client:
     service-url:
@@ -24,17 +26,14 @@ spring:
   datasource:
     username: root
     password: wangfeng
-    url: 'jdbc:mysql://solar_mysql:3306/account?useLegacyDatetimeCode=false&serverTimezone=Asia/Hong_Kong&useSSL=false'
+    url: 'jdbc:mysql://ylfdb1_mysql:3306/ylfdb1?useLegacyDatetimeCode=false&serverTimezone=Asia/Hong_Kong&useSSL=false'
 
   cloud:
     loadbalancer:
       retry:
         enabled: true
     config:
-      discovery:
-        enabled: true
-        service-id: 'config-server'
-      fail-fast: true
+      enabled: false
   zipkin:
     base-url: 'http://zipkin_server:9411/'
 mybatis:

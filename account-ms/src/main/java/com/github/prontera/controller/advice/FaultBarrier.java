@@ -5,21 +5,18 @@ import com.github.prontera.RestStatus;
 import com.github.prontera.config.RequestAttributeConst;
 import com.github.prontera.controller.StatusCode;
 import com.github.prontera.exception.IllegalValidateException;
-import com.github.prontera.exception.ReservationExpireException;
 import com.github.prontera.exception.RestStatusException;
 import com.github.prontera.model.response.ErrorEntity;
 import com.google.common.collect.ImmutableMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DuplicateKeyException;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.UnsatisfiedServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -79,11 +76,6 @@ public class FaultBarrier {
     public Object illegalValidateException(Exception e, HttpServletRequest request) {
         // 取出存储在Request域中的Map
         return request.getAttribute(e.getMessage());
-    }
-
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(ReservationExpireException.class)
-    public void expireReservation(ReservationExpireException e, HttpServletRequest request) {
     }
 
     @ResponseBody

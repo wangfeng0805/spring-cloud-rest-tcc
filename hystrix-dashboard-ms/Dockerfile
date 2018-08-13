@@ -1,5 +1,5 @@
 FROM pronter/jce-java
-MAINTAINER Chris<chiuchunkin@gmail.com>
+MAINTAINER Wangf<chiuchunkin@gmail.com>
 
 VOLUME /tmp
 COPY ./target/hystrix-dashboard-ms-0.0.1-SNAPSHOT.jar /app.jar

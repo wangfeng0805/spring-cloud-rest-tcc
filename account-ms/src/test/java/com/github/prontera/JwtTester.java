@@ -39,7 +39,7 @@ public class JwtTester {
         // JWTVerifier is reusable
         // If the token has an invalid signature or the Claim requirement is not met, a JWTVerificationException will raise.
         JWTVerifier verifier = JWT.require(Algorithm.HMAC256("s+gf2lk&$(*@9Nl*]*AS!0sf"))
-                .withIssuer("olar")
+                .withIssuer("solar")
                 // 5 sec for nbf, iat and exp
                 .acceptLeeway(5)
                 .build(); //Reusable verifier instance

@@ -6,8 +6,6 @@ import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@EnableAsync
-@EnableScheduling
 @MapperScan(basePackages = "com.github.prontera.persistence", annotationClass = MyBatisRepository.class)
 @SpringCloudApplication
 public class AccountMsApplication {

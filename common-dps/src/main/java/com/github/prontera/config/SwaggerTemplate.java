@@ -51,7 +51,7 @@ public class SwaggerTemplate {
     @Bean
     @ConditionalOnMissingBean
     public SwaggerApiInfo apiInfo() {
-        return SwaggerApiInfo.builder().title("Solar").version("v1").serviceUrl(null).statusList(ImmutableList.of()).build();
+        return SwaggerApiInfo.builder().title("Ylf").version("v1").serviceUrl(null).statusList(ImmutableList.of()).build();
     }
 
     @Bean
